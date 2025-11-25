@@ -1,0 +1,7 @@
+TEAM_ID=
+
+PRODUCT_NAME=multi_module_template
+PRODUCT_BUNDLE_IDENTIFIER=com.example.multi_module_template.multi_module_template$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
