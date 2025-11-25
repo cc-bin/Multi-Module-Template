@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		423FD4F32ED439E1008CA8B5 /* Adjust in Frameworks */ = {isa = PBXBuildFile; productRef = 423FD4F22ED439E1008CA8B5 /* Adjust */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		423FD3E12ED36B13008CA8B5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -58,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				423FD4F32ED439E1008CA8B5 /* Adjust in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +135,6 @@
 			mainGroup = 831EAF418F9BECA2EE1A573E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				423FD4F12ED439E1008CA8B5 /* XCRemoteSwiftPackageReference "ios_sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C6891D05A484A990485E5445 /* Products */;
@@ -396,25 +390,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		423FD4F12ED439E1008CA8B5 /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adjust/ios_sdk/";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.38.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		423FD4F22ED439E1008CA8B5 /* Adjust */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 423FD4F12ED439E1008CA8B5 /* XCRemoteSwiftPackageReference "ios_sdk" */;
-			productName = Adjust;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6C0F18B467BC288CD3DCE65 /* Project object */;
 }

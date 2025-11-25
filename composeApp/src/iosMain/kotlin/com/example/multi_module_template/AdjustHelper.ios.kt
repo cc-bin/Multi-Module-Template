@@ -1,6 +1,5 @@
 package com.example.multi_module_template
 
-import com.example.multi_module_template.Bridges.AdjustBridge
 import kotlinx.cinterop.ExperimentalForeignApi
 
 //import Adjust.*
@@ -11,7 +10,7 @@ actual val getAdjustHelper: AdjustHelper? =
     object : AdjustHelper{
     override fun init(callback: (deviceId: String, network: String) -> Unit) {
         val yourAppToken = "bgxygfj4r18g"
-        AdjustBridge.initializeWithAppToken(yourAppToken, "sandbox")
+
 //        val environment = ADJEnvironmentSandbox
 //
 //        val adjustConfig = ADJConfig(yourAppToken, environment)

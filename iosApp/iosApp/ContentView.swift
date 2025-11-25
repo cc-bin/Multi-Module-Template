@@ -12,9 +12,6 @@ struct ComposeView: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-    init(){
-        AdjustBridge.initialize(appToken: "bgxygfj4r18g", environment: "sandbox")
-    }
     var body: some View {
         ComposeView()
             .ignoresSafeArea()
