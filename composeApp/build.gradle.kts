@@ -6,8 +6,8 @@ import io.github.frankois944.spmForKmp.utils.ExperimentalSpmForKmpFeature
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.composeMultiplatformPlugin)
+//    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kmpApplication)
 }
 
 kotlin {
@@ -22,7 +22,7 @@ kotlin {
         commonTest.dependencies {
 
         }
-        jvmMain.dependencies {
+        desktopMain.dependencies {
 
         }
         iosMain.dependencies {

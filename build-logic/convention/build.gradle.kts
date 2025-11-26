@@ -12,9 +12,14 @@ dependencies{
 gradlePlugin {
     plugins {
         // Android Plugins
-        register("composeMultiplatformPlugin") {
-            id = "org.convention.compose.multiplatform"
-            implementationClass = "ComposeMultiplatformPlugin"
+        register("kmpLibrary") {
+            id = "org.convention.kmp.library"
+            implementationClass = "KMPLibraryPlugin"
+        }
+
+        register("kmpApplication") {
+            id = "org.convention.kmp.application"
+            implementationClass = "KMPApplicationPlugin"
         }
     }
 }

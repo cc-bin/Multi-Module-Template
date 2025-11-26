@@ -44,7 +44,8 @@ multiplatform-settings-serialization = { group = "com.russhwolf", name = "multip
 
 [plugins]
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-composeMultiplatformPlugin = { id = "org.convention.compose.multiplatform", version = "unspecified" }
+kmpLibrary = { id = "org.convention.kmp.library", version = "unspecified" }
+kmpApplication = { id = "org.convention.kmp.application", version = "unspecified" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 composeHotReload = { id = "org.jetbrains.compose.hot-reload", version.ref = "composeHotReload" }

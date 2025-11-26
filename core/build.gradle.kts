@@ -1,6 +1,5 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.composeMultiplatformPlugin)
+    alias(libs.plugins.kmpLibrary)
 }
 
 android {
@@ -35,7 +34,7 @@ kotlin {
         commonTest.dependencies {
             api(libs.kotlin.test)
         }
-        jvmMain.dependencies {
+        desktopMain.dependencies {
             api(compose.desktop.currentOs)
             api(libs.kotlinx.coroutinesSwing)
         }
