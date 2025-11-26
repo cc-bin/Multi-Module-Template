@@ -18,6 +18,7 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(projects.core)
+            implementation(libs.store)
         }
         commonTest.dependencies {
 

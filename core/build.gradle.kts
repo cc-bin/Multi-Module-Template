@@ -13,6 +13,7 @@ kotlin {
             api(compose.preview)
             api(libs.androidx.activity.compose)
             api(libs.kotlinx.coroutines.android)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             api(libs.multiplatform.settings.no.arg)
@@ -30,6 +31,16 @@ kotlin {
 
             api(libs.kotlinx.coroutines.core)
 
+            api(libs.koin.ktor)
+            api(libs.koin.core)
+            api(libs.koin.test)
+            api(libs.koin.compose)
+            api(libs.koin.compose.viewmodel)
+
+            implementation(libs.slf4j.simple)
+            api(libs.kotlin.logging)
+
+            implementation(libs.store)
         }
         commonTest.dependencies {
             api(libs.kotlin.test)
