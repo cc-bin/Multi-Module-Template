@@ -45,6 +45,13 @@ kotlin {
             api(libs.kotlin.logging)
 
             implementation(libs.store)
+
+            api(libs.coil.compose)
+            implementation(libs.coil.network.ktor3)
+
+            implementation(libs.ktorfit.lib)
+            implementation(libs.ktorfit.converters.flow)
+            api(libs.ktor.client.logging)
         }
         commonTest.dependencies {
             api(libs.kotlin.test)
