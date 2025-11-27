@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import convention.commonConfigureLibraryAndApplication
 import convention.configureKotlinAndroid
@@ -12,21 +10,18 @@ class KMPLibraryPlugin : Plugin<Project> {
     @OptIn(ExperimentalWasmDsl::class)
     override fun apply(project: Project) {
         with(project){
+            pluginManager.apply("com.android.library")
+            commonConfigureLibraryAndApplication()
 
-            with(project){
-                pluginManager.apply("com.android.library")
-                commonConfigureLibraryAndApplication()
-
-                extensions.configure<LibraryExtension> {
-                    configureKotlinAndroid(this)
-                    // The resource prefix is derived from the module name,
-                    // so resources inside ":core:module1" must be prefixed with "core_module1_"
-                    resourcePrefix = path
-                        .split("""\W""".toRegex())
-                        .drop(1).distinct()
-                        .joinToString(separator = "_")
-                        .lowercase() + "_"
-                }
+            extensions.configure<LibraryExtension> {
+                configureKotlinAndroid(this)
+                // The resource prefix is derived from the module name,
+                // so resources inside ":core:module1" must be prefixed with "core_module1_"
+                resourcePrefix = path
+                    .split("""\W""".toRegex())
+                    .drop(1).distinct()
+                    .joinToString(separator = "_")
+                    .lowercase() + "_"
             }
         }
     }

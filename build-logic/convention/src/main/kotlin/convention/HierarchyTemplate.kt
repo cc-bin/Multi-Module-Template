@@ -49,14 +49,14 @@ private val hierarchyTemplate = KotlinHierarchyTemplate {
     common {
         withCompilations { true }
 
-        groupNonAndroid()
-        groupJsCommon()
-        groupNonJsCommon()
-        groupJvmCommon()
-        groupNonJvmCommon()
-        groupNative()
-        groupNonNative()
-        groupJvmJsCommon()
+//        groupNonAndroid()
+        groupWebCommon()
+//        groupNonJsCommon()
+//        groupJvmCommon()
+//        groupNonJvmCommon()
+//        groupNative()
+//        groupNonNative()
+//        groupJvmJsCommon()
         groupMobile()
     }
 }
@@ -67,7 +67,7 @@ private val hierarchyTemplate = KotlinHierarchyTemplate {
 private fun KotlinHierarchyBuilder.groupNonAndroid() {
     group("nonAndroid") {
         withJvm()
-        groupJsCommon()
+        groupWebCommon()
         groupNative()
     }
 }
@@ -75,8 +75,8 @@ private fun KotlinHierarchyBuilder.groupNonAndroid() {
 /**
  * Creates a group of JavaScript-related platforms (JS and WebAssembly JS).
  */
-private fun KotlinHierarchyBuilder.groupJsCommon() {
-    group("jsCommon") {
+private fun KotlinHierarchyBuilder.groupWebCommon() {
+    group("web") {
         withJs()
         withWasmJs()
     }
@@ -107,7 +107,7 @@ private fun KotlinHierarchyBuilder.groupJvmCommon() {
  */
 private fun KotlinHierarchyBuilder.groupNonJvmCommon() {
     group("nonJvmCommon") {
-        groupJsCommon()
+        groupWebCommon()
         groupNative()
     }
 }
@@ -117,7 +117,7 @@ private fun KotlinHierarchyBuilder.groupNonJvmCommon() {
  */
 private fun KotlinHierarchyBuilder.groupJvmJsCommon() {
     group("jvmJsCommon") {
-        groupJsCommon()
+        groupWebCommon()
         withJvm()
     }
 }
@@ -148,7 +148,7 @@ private fun KotlinHierarchyBuilder.groupNative() {
  */
 private fun KotlinHierarchyBuilder.groupNonNative() {
     group("nonNative") {
-        groupJsCommon()
+        groupWebCommon()
         groupJvmCommon()
     }
 }
@@ -175,5 +175,10 @@ private fun KotlinHierarchyBuilder.groupMobile() {
  * ```
  */
 fun KotlinMultiplatformExtension.applyProjectHierarchyTemplate() {
-    applyHierarchyTemplate(hierarchyTemplate)
+    applyDefaultHierarchyTemplate{
+        common {
+            groupWebCommon()
+            groupMobile()
+        }
+    }
 }

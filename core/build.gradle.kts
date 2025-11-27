@@ -14,6 +14,10 @@ kotlin {
             api(libs.androidx.activity.compose)
             api(libs.kotlinx.coroutines.android)
             implementation(libs.koin.android)
+
+            implementation(libs.firebase.bom)
+            implementation(libs.firebase.analytics)
+            implementation(libs.firebase.crashlytics.ndk)
         }
         commonMain.dependencies {
             api(libs.multiplatform.settings.no.arg)
@@ -52,5 +56,9 @@ kotlin {
         iosMain.dependencies {
 
         }
+        mobileMain.dependencies {
+            api(libs.gitlive.firebase.crashlytics)
+        }
+        webMain.dependencies {  }
     }
 }

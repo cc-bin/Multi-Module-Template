@@ -1,5 +1,6 @@
 @file:OptIn(ExperimentalSpmForKmpFeature::class)
 
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import io.github.frankois944.spmForKmp.definition.product.ProductName
 import io.github.frankois944.spmForKmp.swiftPackageConfig
 import io.github.frankois944.spmForKmp.utils.ExperimentalSpmForKmpFeature
@@ -44,6 +45,13 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+            configure<CrashlyticsExtension> {
+                // Enable processing and uploading of native symbols to Firebase servers.
+                // By default, this is disabled to improve build speeds.
+                // This flag must be enabled to see properly-symbolicated native
+                // stack traces in the Crashlytics dashboard.
+                nativeSymbolUploadEnabled = true
+            }
         }
     }
 }

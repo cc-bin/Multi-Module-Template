@@ -19,6 +19,7 @@ import kotlin.text.set
 @OptIn(ExperimentalWasmDsl::class, ExperimentalKotlinGradlePluginApi::class)
 internal fun Project.configureKotlinMultiplatform() {
     extensions.configure<KotlinMultiplatformExtension> {
+        applyProjectHierarchyTemplate()
 
         androidTarget {
             compilerOptions {

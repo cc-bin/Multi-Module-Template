@@ -16,7 +16,12 @@ class KMPApplicationPlugin : Plugin<Project> {
     @OptIn(ExperimentalWasmDsl::class)
     override fun apply(project: Project) {
         with(project){
-            pluginManager.apply("com.android.application")
+            with(plugins){
+                apply("com.android.application")
+                apply("com.google.gms.google-services")
+                apply("com.google.firebase.crashlytics")
+            }
+
             commonConfigureLibraryAndApplication()
 
             extensions.configure<ApplicationExtension> {

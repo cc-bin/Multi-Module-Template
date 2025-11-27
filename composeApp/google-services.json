@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554084563332",
+    "project_id": "kmp-template-b96ce",
+    "storage_bucket": "kmp-template-b96ce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554084563332:android:86de586dcd94cd12b645d1",
+        "android_client_info": {
+          "package_name": "com.example.multi_module_template"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALB5GAHvxabIwjengFHaOAar9HKMqLhds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
