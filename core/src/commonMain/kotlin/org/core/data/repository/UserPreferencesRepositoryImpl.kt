@@ -9,7 +9,7 @@
  */
 @file:OptIn(ExperimentalSerializationApi::class, ExperimentalSettingsApi::class)
 
-package org.core.datastore
+package org.core.data.repository
 
 import com.russhwolf.settings.ExperimentalSettingsApi
 import com.russhwolf.settings.Settings
@@ -17,6 +17,7 @@ import com.russhwolf.settings.serialization.decodeValue
 import com.russhwolf.settings.serialization.decodeValueOrNull
 import com.russhwolf.settings.serialization.encodeValue
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -24,11 +25,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
-import org.core.IO
-import org.core.model.DarkThemeConfig
-import org.core.model.LanguageConfig
-import org.core.model.ThemeBrand
-import org.core.model.UserData
+import org.core.data.repository.model.DarkThemeConfig
+import org.core.data.repository.model.LanguageConfig
+import org.core.data.repository.model.ThemeBrand
+import org.core.data.repository.model.UserData
 
 private const val USER_DATA_KEY = "user_data_key"
 

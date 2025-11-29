@@ -13,11 +13,11 @@ kotlin {
             api(compose.preview)
             api(libs.androidx.activity.compose)
             api(libs.kotlinx.coroutines.android)
-            implementation(libs.koin.android)
+            api(libs.koin.android)
 
-            implementation(libs.firebase.bom)
-            implementation(libs.firebase.analytics)
-            implementation(libs.firebase.crashlytics.ndk)
+            api(project.dependencies.platform(libs.firebase.bom))
+            api(libs.firebase.analytics)
+            api(libs.firebase.crashlytics.ndk)
         }
         commonMain.dependencies {
             api(libs.multiplatform.settings.no.arg)
@@ -41,8 +41,6 @@ kotlin {
             api(libs.koin.compose)
             api(libs.koin.compose.viewmodel)
 
-            implementation(libs.slf4j.simple)
-            api(libs.kotlin.logging)
 
             implementation(libs.store)
 
@@ -52,6 +50,12 @@ kotlin {
             implementation(libs.ktorfit.lib)
             implementation(libs.ktorfit.converters.flow)
             api(libs.ktor.client.logging)
+            api(libs.kermit)
+            implementation(libs.ktor.client.auth)
+            implementation(libs.ktor.client.content.negotiation)
+            api(libs.ktor.serialization.kotlinx.json)
+
+            implementation(libs.connectivity.core)
         }
         commonTest.dependencies {
             api(libs.kotlin.test)
@@ -59,13 +63,21 @@ kotlin {
         desktopMain.dependencies {
             api(compose.desktop.currentOs)
             api(libs.kotlinx.coroutinesSwing)
+
+            api(libs.calf.webview)
         }
         iosMain.dependencies {
 
         }
         mobileMain.dependencies {
             api(libs.gitlive.firebase.crashlytics)
+            api(libs.calf.permissions)
+            api(libs.calf.webview)
+
+            api(libs.connectivity.device)
         }
-        webMain.dependencies {  }
+        desktopMain.dependencies {
+            api(libs.connectivity.http)
+        }
     }
 }

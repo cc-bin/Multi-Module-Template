@@ -7,16 +7,10 @@
  *
  * See See https://github.com/openMF/kmp-project-template/blob/main/LICENSE
  */
-package org.core.model
+package org.core.data.repository.model
 
-enum class ThemeBrand(val brandName: String) {
-    DEFAULT("Default"),
-    ANDROID("Android"),
-    ;
+enum class UnlockType {
+    PASSWORD,
 
-    companion object {
-        fun fromString(value: String): ThemeBrand {
-            return entries.find { it.brandName.equals(value, ignoreCase = true) } ?: DEFAULT
-        }
-    }
+    PIN,
 }

@@ -7,7 +7,7 @@
  *
  * See See https://github.com/openMF/kmp-project-template/blob/main/LICENSE
  */
-package org.core.model
+package org.core.data.repository.model
 
 import kotlinx.serialization.Serializable
 

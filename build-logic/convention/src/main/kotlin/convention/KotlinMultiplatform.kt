@@ -40,17 +40,6 @@ internal fun Project.configureKotlinMultiplatform() {
 
         jvm("desktop")
 
-        js {
-            browser()
-            binaries.executable()
-        }
-
-        @OptIn(ExperimentalWasmDsl::class)
-        wasmJs {
-            browser()
-            binaries.executable()
-        }
-
         compilerOptions {
             freeCompilerArgs.add("-Xexpect-actual-classes")
             freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")

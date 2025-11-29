@@ -7,7 +7,7 @@
  *
  * See See https://github.com/openMF/kmp-project-template/blob/main/LICENSE
  */
-package org.core.model
+package org.core.data.repository.model
 
 enum class DarkThemeConfig(val configName: String, val osValue: Int) {
     FOLLOW_SYSTEM("Follow System", -1),

@@ -7,16 +7,8 @@
  *
  * See See https://github.com/openMF/kmp-project-template/blob/main/LICENSE
  */
-package org.core.model
+package org.core.util
 
-data class Country(
-    val code: String,
-    val name: String,
-    val phoneCode: String,
-    val mobilePattern: String,
-    val landlinePattern: String? = null,
-    val specialPattern: String? = null,
-    val formatExample: String,
-    val flagEmoji: String,
-    val flagResourceName: String,
-)
+import dev.jordond.connectivity.Connectivity
+
+expect val connectivityProvider: Connectivity

@@ -177,7 +177,6 @@ private fun KotlinHierarchyBuilder.groupMobile() {
 fun KotlinMultiplatformExtension.applyProjectHierarchyTemplate() {
     applyDefaultHierarchyTemplate{
         common {
-            groupWebCommon()
             groupMobile()
         }
     }

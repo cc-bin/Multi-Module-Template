@@ -7,14 +7,14 @@
  *
  * See See https://github.com/openMF/kmp-project-template/blob/main/LICENSE
  */
-package org.core.datastore
+package org.core.data.repository
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
-import org.core.model.DarkThemeConfig
-import org.core.model.LanguageConfig
-import org.core.model.ThemeBrand
-import org.core.model.UserData
+import org.core.data.repository.model.DarkThemeConfig
+import org.core.data.repository.model.LanguageConfig
+import org.core.data.repository.model.ThemeBrand
+import org.core.data.repository.model.UserData
 
 /**
  * Repository interface for managing user preferences with reactive
