@@ -25,10 +25,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
-import org.core.data.repository.model.DarkThemeConfig
-import org.core.data.repository.model.LanguageConfig
-import org.core.data.repository.model.ThemeBrand
-import org.core.data.repository.model.UserData
+import org.core.data.model.DarkThemeConfig
+import org.core.data.model.LanguageConfig
+import org.core.data.model.ThemeBrand
+import org.core.data.model.UserData
 
 private const val USER_DATA_KEY = "user_data_key"
 

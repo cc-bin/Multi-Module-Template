@@ -7,7 +7,7 @@
  *
  * See See https://github.com/openMF/kmp-project-template/blob/main/LICENSE
  */
-package org.core.data.repository.model
+package org.core.data.model
 
 /**
  * Represents the languages supported by the app.

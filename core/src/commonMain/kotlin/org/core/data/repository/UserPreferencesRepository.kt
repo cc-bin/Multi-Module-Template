@@ -11,10 +11,10 @@ package org.core.data.repository
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
-import org.core.data.repository.model.DarkThemeConfig
-import org.core.data.repository.model.LanguageConfig
-import org.core.data.repository.model.ThemeBrand
-import org.core.data.repository.model.UserData
+import org.core.data.model.DarkThemeConfig
+import org.core.data.model.LanguageConfig
+import org.core.data.model.ThemeBrand
+import org.core.data.model.UserData
 
 /**
  * Repository interface for managing user preferences with reactive

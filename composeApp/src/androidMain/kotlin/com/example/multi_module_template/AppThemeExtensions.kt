@@ -7,16 +7,15 @@
  *
  * See See https://github.com/openMF/kmp-project-template/blob/main/LICENSE
  */
-package org.core.data.model
+package com.example.multi_module_template
 
-data class Country(
-    val code: String,
-    val name: String,
-    val phoneCode: String,
-    val mobilePattern: String,
-    val landlinePattern: String? = null,
-    val specialPattern: String? = null,
-    val formatExample: String,
-    val flagEmoji: String,
-    val flagResourceName: String,
-)
+import org.core.data.model.DarkThemeConfig
+
+fun DarkThemeConfig.isDarkMode(
+    isSystemDarkMode: Boolean,
+): Boolean =
+    when (this) {
+        DarkThemeConfig.FOLLOW_SYSTEM -> isSystemDarkMode
+        DarkThemeConfig.DARK -> true
+        DarkThemeConfig.LIGHT -> false
+    }

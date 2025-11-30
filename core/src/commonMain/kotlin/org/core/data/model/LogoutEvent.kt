@@ -9,14 +9,10 @@
  */
 package org.core.data.model
 
-data class Country(
-    val code: String,
-    val name: String,
-    val phoneCode: String,
-    val mobilePattern: String,
-    val landlinePattern: String? = null,
-    val specialPattern: String? = null,
-    val formatExample: String,
-    val flagEmoji: String,
-    val flagResourceName: String,
+/**
+ * Result class to share the [loggedOutUserId] of a user
+ * that was successfully logged out.
+ */
+data class LogoutEvent(
+    val loggedOutUserId: Long,
 )

@@ -32,6 +32,7 @@ kotlin {
             api(compose.components.uiToolingPreview)
             api(libs.androidx.lifecycle.viewmodelCompose)
             api(libs.androidx.lifecycle.runtimeCompose)
+            api(libs.navigation.compose)
 
             api(libs.kotlinx.coroutines.core)
 
@@ -56,6 +57,10 @@ kotlin {
             api(libs.ktor.serialization.kotlinx.json)
 
             implementation(libs.connectivity.core)
+
+            api(libs.filekit.core)
+            api(libs.filekit.dialogs.compose)
+            api(libs.filekit.coil)
         }
         commonTest.dependencies {
             api(libs.kotlin.test)

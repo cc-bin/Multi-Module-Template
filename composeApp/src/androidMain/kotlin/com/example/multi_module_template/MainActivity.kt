@@ -13,13 +13,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+            SharedApp(
+                updateScreenCapture = {},
+                handleRecreate = {},
+                handleThemeMode = {},
+                handleAppLocale = {},
+                onSplashScreenRemoved = {},
+            )
         }
     }
-}
-
-@Preview
-@Composable
-fun AppAndroidPreview() {
-    App()
 }

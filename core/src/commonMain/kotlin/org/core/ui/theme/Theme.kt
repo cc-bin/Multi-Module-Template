@@ -1,17 +1,19 @@
 package org.core.ui.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
-private val DarkColorScheme = darkColorScheme(
+val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
     tertiary = Pink80
 )
 
-private val LightColorScheme = lightColorScheme(
+val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40
@@ -29,12 +31,15 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun MyTheme(
-    darkTheme: Boolean,
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    androidTheme: Boolean = false,
+    useDynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        useDynamicColor -> platformColorScheme(darkTheme, true)
+        androidTheme -> if (darkTheme) darkColorScheme() else lightColorScheme()
+        else -> if (darkTheme) DarkColorScheme else LightColorScheme
     }
 
     MaterialTheme(
@@ -42,3 +47,8 @@ fun MyTheme(
         content = content
     )
 }
+
+@Composable
+expect fun platformColorScheme(
+    useDarkTheme: Boolean, dynamicColor: Boolean,
+): ColorScheme
